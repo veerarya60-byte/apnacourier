@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6b21b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Apna Courier">
+<title>Apna Courier: call us, we pick up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d2757;--paper:#f7f8fc;--card:#ffffff;--sun:#f6b21b;--sun-ink:#1d2757;--teal:#0d7f72;--mute:#555d80;--line:#dde1f0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eef0fb;--paper:#121735;--card:#1a2147;--sun:#f6b21b;--sun-ink:#1d2757;--teal:#4fd1c0;--mute:#a7aed2;--line:#2b3361;color-scheme:dark}}
+:root[data-theme="dark"]{--ink:#eef0fb;--paper:#121735;--card:#1a2147;--sun:#f6b21b;--sun-ink:#1d2757;--teal:#4fd1c0;--mute:#a7aed2;--line:#2b3361;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 "Nunito Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Baloo 2",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:clamp(28px,5vw,40px);font-weight:800;margin-bottom:12px}
+.lead{color:var(--mute);max-width:56ch;margin:0 0 28px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font:800 24px "Baloo 2",sans-serif;text-decoration:none}
+.logo span{background:var(--sun);color:var(--sun-ink);padding:0 8px;border-radius:8px;margin-right:2px}
+.tel-sm{font-weight:700;text-decoration:none;border:2px solid var(--ink);padding:6px 14px;border-radius:99px}
+.hero{display:grid;gap:36px;padding:36px 0 64px;align-items:center}
+@media(min-width:820px){.hero{grid-template-columns:1.3fr 1fr}}
+h1{font-size:clamp(40px,8vw,72px);font-weight:800;letter-spacing:-.01em}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--sun) 62%)}
+.hero p{font-size:19px;color:var(--mute);max-width:46ch;margin:18px 0 26px}
+.call{display:inline-flex;flex-direction:column;background:var(--sun);color:var(--sun-ink);text-decoration:none;padding:16px 28px;border-radius:18px;box-shadow:0 5px 0 var(--ink)}
+.call small{font-weight:700;font-size:15px}
+.call b{font:800 clamp(28px,6vw,38px)/1.1 "Baloo 2",sans-serif}
+.call:active{transform:translateY(3px);box-shadow:0 2px 0 var(--ink)}
+.ticket{background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:22px;transform:rotate(2deg)}
+.ticket h3{font-size:22px;margin-bottom:10px}
+.ticket dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
+.ticket dt{color:var(--mute)}
+.ticket dd{margin:0;font-weight:700}
+.ticket .ok{margin-top:14px;padding-top:12px;border-top:2px dashed var(--line);color:var(--teal);font-weight:700}
+.items{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.items li{background:var(--card);border:1px solid var(--line);padding:10px 18px;border-radius:99px;font-weight:600}
+.steps{display:grid;gap:16px;padding:0;margin:0;list-style:none;counter-reset:s}
+@media(min-width:700px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--paper);font:800 20px "Baloo 2",sans-serif;margin-bottom:12px}
+.steps h3,.why h3{font-size:22px;margin-bottom:6px}
+.steps p,.why p{margin:0;color:var(--mute)}
+.why{display:grid;gap:22px 40px}
+@media(min-width:700px){.why{grid-template-columns:1fr 1fr}}
+.why div{border-left:4px solid var(--sun);padding-left:16px}
+.senior{background:var(--ink);color:var(--paper);border-radius:24px;padding:32px 24px}
+.senior p{color:inherit;opacity:.85;max-width:56ch;margin:10px 0 0}
+.who{columns:2 240px;gap:32px;padding-left:20px;margin:0}
+.who li{margin-bottom:8px;break-inside:avoid}
+.prices{display:grid;gap:16px}
+@media(min-width:700px){.prices{grid-template-columns:repeat(3,1fr)}}
+.price{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.price b{display:block;font:800 44px/1 "Baloo 2",sans-serif;color:var(--teal);margin-bottom:6px}
+.note{color:var(--mute);margin:16px 0 0}
+form{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;max-width:560px}
+label{display:grid;gap:4px;font-weight:700}
+input,select{font:inherit;padding:12px;border-radius:10px;border:2px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
+.chk{display:flex;gap:10px;align-items:center}.chk input{width:auto}
+button{font:800 20px "Baloo 2",sans-serif;background:var(--sun);color:var(--sun-ink);border:0;border-radius:14px;padding:12px 20px;cursor:pointer;box-shadow:0 4px 0 var(--ink)}
+#out{white-space:pre-line;margin-top:16px;max-width:560px;border:2px dashed var(--teal);border-radius:16px;padding:16px;font-weight:700}
+#out:empty{display:none}
+.safe{padding-left:20px;margin:0;max-width:60ch}.safe li{margin-bottom:8px}
+.split{display:grid;gap:28px;align-items:center}
+@media(min-width:760px){.split{grid-template-columns:1fr 1fr}}
+.map{width:100%;max-width:340px;height:auto;margin:0 auto;display:block}
+.map circle{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:6 5}
+.map text{fill:var(--ink);font:700 14px "Baloo 2",sans-serif}
+.grow{display:grid;gap:16px;padding:0;margin:0;list-style:none}
+@media(min-width:700px){.grow{grid-template-columns:repeat(2,1fr)}}
+.grow li{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.grow h3{font-size:21px;margin-bottom:6px}.grow p{margin:0;color:var(--mute)}
+table{border-collapse:collapse;width:100%;max-width:460px;background:var(--card);border-radius:14px;overflow:hidden}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
+tr:last-child td{border:0;font-weight:800;color:var(--teal)}
+footer{background:var(--sun);color:var(--sun-ink);text-align:center;padding:48px 20px}
+footer h2{margin-bottom:8px}
+footer .call{background:var(--sun-ink);color:#fff;box-shadow:none;margin-top:14px}
+footer small{display:block;margin-top:22px;font-size:14px}
+
+/* ---- smooth motion ---- */
+html{scroll-behavior:smooth}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:4px;width:100%;background:var(--sun);transform:scaleX(0);transform-origin:0 50%;z-index:50;pointer-events:none}
+.logo,.tel-sm,.call,button,.items li,.steps li,.price,.grow li,.why div,.ticket{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,background .3s,color .3s}
+.logo:hover{transform:rotate(-2deg) scale(1.05)}
+.tel-sm:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+.call:hover{transform:translateY(-4px);box-shadow:0 9px 0 var(--ink)}
+footer .call:hover{box-shadow:0 8px 18px rgba(0,0,0,.25)}
+button:hover{transform:translateY(-3px);box-shadow:0 7px 0 var(--ink)}
+button:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.items li:hover{transform:translateY(-4px) scale(1.04);background:var(--sun);color:var(--sun-ink)}
+.steps li:hover,.price:hover,.grow li:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(29,39,87,.14)}
+.why div{transition:border-color .3s,padding-left .35s}
+.why div:hover{padding-left:24px;border-color:var(--teal)}
+input,select{transition:border-color .25s,box-shadow .25s}
+input:focus,select:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(13,127,114,.18);outline:0}
+@keyframes up{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes tin{from{opacity:0;transform:translateY(40px) rotate(8deg)}to{opacity:1;transform:rotate(2deg)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(2deg)}50%{transform:translateY(-12px) rotate(.5deg)}}
+@keyframes hl{from{background-size:0 100%}to{background-size:100% 100%}}
+@keyframes ring{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.6)}}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+header{animation:up .7s both}
+.hero h1{animation:up .8s .1s cubic-bezier(.2,.7,.2,1) both}
+h1 em{background-repeat:no-repeat;background-size:100% 100%;animation:hl .9s .8s cubic-bezier(.2,.7,.2,1) backwards}
+.hero p{animation:up .8s .25s cubic-bezier(.2,.7,.2,1) both}
+.hero .call{animation:up .8s .4s cubic-bezier(.2,.7,.2,1) both}
+.ticket{animation:tin 1s .5s cubic-bezier(.2,.7,.2,1) both,bob 6s 1.6s ease-in-out infinite}
+.ticket:hover{animation-play-state:paused,paused}
+.js .rv{opacity:0}
+.js .rv.in{opacity:1;animation:up .8s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:var(--d,0s)}
+.map circle{transform-box:fill-box;transform-origin:center}
+.js .map:not(.in) circle{opacity:0}
+.map.in circle{animation:ring .9s cubic-bezier(.2,.8,.3,1) backwards}
+.map.in circle:nth-of-type(1){animation:ring .9s .35s backwards,spin 60s linear infinite}
+.map.in circle:nth-of-type(2){animation:ring .9s .2s backwards,spin 45s linear infinite reverse}
+.map.in circle:nth-of-type(3){animation:ring .9s 0s backwards,spin 30s linear infinite}
+.map.in circle:nth-of-type(4){animation:ring .6s .6s backwards,beat 2s 1.2s ease-in-out infinite}
+.map text{transition:opacity .6s .9s}
+.js .map:not(.in) text{opacity:0}
+#out:not(:empty){animation:pop .5s cubic-bezier(.2,.8,.3,1)}
+.city{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 14px 5px 10px;font-weight:700;font-size:15px;margin-bottom:16px;animation:up .7s both}
+.city i{width:10px;height:10px;border-radius:50%;background:var(--teal);animation:ping 1.8s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 var(--teal)}70%,100%{box-shadow:0 0 0 10px transparent}}
+.scene{width:100%;height:auto;display:block;margin-top:-24px;background:linear-gradient(var(--card),var(--paper));border:1px solid var(--line);border-radius:24px}
+.scene .a{fill:var(--sun)}.scene .b{fill:var(--ink)}.scene .c{fill:var(--teal)}.scene .d{fill:var(--line)}.scene .e{fill:var(--card)}
+.scene .s{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round}
+@keyframes drive{from{transform:translateX(-170px)}to{transform:translateX(940px)}}
+@keyframes cloud{from{transform:translateX(-200px)}to{transform:translateX(1000px)}}
+@keyframes dash{to{stroke-dashoffset:-40}}
+@keyframes draw{from{stroke-dashoffset:500}}
+@keyframes jig{50%{transform:translateY(-3px)}}
+.rider{animation:drive 10s linear infinite}.jig{animation:jig .5s ease-in-out infinite}
+.cl{animation:cloud 45s linear infinite;opacity:.8}
+.road{stroke:var(--paper);stroke-width:3;stroke-dasharray:22 18;animation:dash 1s linear infinite}
+.wh{transform-box:fill-box;transform-origin:center;animation:spin .5s linear infinite}
+.sun{transform-box:fill-box;transform-origin:center;animation:beat 4s ease-in-out infinite}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.stat{background:var(--ink);color:var(--paper);border-radius:18px;padding:16px 8px;text-align:center;line-height:1.2}
+.stat b{display:block;font:800 clamp(28px,7vw,44px)/1 "Baloo 2",sans-serif;color:var(--sun)}
+.stat span{font-size:14px;opacity:.85}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:0 0 22px}
+@media(min-width:700px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{margin:0;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px 10px 12px;text-align:center;font:700 18px "Baloo 2",sans-serif;transition:transform .35s,box-shadow .35s}
+.tile svg{width:100%;max-width:120px;height:auto;transition:transform .4s cubic-bezier(.2,.8,.3,1)}
+.tile:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(29,39,87,.14)}
+.tile:hover svg{transform:rotate(-6deg) scale(1.1)}
+.map{max-width:420px}
+.st path{fill:none;stroke:var(--line);stroke-width:7;stroke-linecap:round}
+.map.in .st path{stroke-dasharray:500;animation:draw 1.6s ease backwards}
+.mapbtns{display:flex;flex-wrap:wrap;gap:12px;margin:6px 0 4px}
+a.btn{display:inline-block;font:800 20px "Baloo 2",sans-serif;background:var(--card);color:var(--ink);border:2px solid var(--ink);border-radius:14px;padding:10px 18px;text-decoration:none;transition:transform .3s,background .3s}
+a.btn:hover{transform:translateY(-3px);background:var(--sun);color:var(--sun-ink)}
+.mqw{overflow:hidden;padding:18px 0 4px}
+.mq{margin:0 -20px;background:var(--ink);color:var(--paper);padding:12px 0;font:700 21px "Baloo 2",sans-serif;white-space:nowrap;transform:rotate(-1deg)}
+.mq div{display:inline-block;animation:mq 30s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq em{font-style:normal;color:var(--sun);margin:0 14px}
+.trk{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 18px;max-width:640px}
+.tbar{position:relative;height:8px;border-radius:9px;background:var(--line);margin:8px 12.5% 18px}
+.tbar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:9px;background:var(--teal);transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.tbar b{position:absolute;top:-9px;left:0;width:26px;height:26px;margin-left:-13px;border-radius:50%;background:var(--sun);border:3px solid var(--ink);transition:left 1.2s cubic-bezier(.4,0,.2,1)}
+.trk ol{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;text-align:center;font-weight:700;font-size:14px}
+.trk li{color:var(--mute);transition:color .4s,transform .4s}.trk li.on{color:var(--teal);transform:translateY(-2px)}
+.trk .note{min-height:3.2em}
+.cf{position:fixed;top:-14px;width:9px;height:14px;border-radius:2px;z-index:60;pointer-events:none;animation:cf 2s ease-in forwards}
+@keyframes cf{to{transform:translate(var(--x),105vh) rotate(var(--r))}}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px;z-index:40;transition:transform .5s cubic-bezier(.2,.8,.3,1),opacity .4s}
+.js .fab:not(.show){transform:translateY(140px);opacity:0}
+.fab a{font:800 17px "Baloo 2",sans-serif;text-decoration:none;padding:11px 18px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.25);text-align:center}
+.fab .wa{background:#25d366;color:#07351a}.fab .fc{background:var(--sun);color:var(--sun-ink);animation:wob 3s 2s infinite}
+@keyframes wob{0%,90%,100%{transform:none}93%{transform:rotate(-6deg)}96%{transform:rotate(6deg)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+
+
+.crewg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}@media(min-width:700px){.crewg{grid-template-columns:repeat(4,1fr)}}
+.ch{display:block;font:inherit;box-shadow:none;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:22px;padding:12px 8px;text-align:center}
+.ch svg{width:100%;max-width:130px;height:auto;transition:transform .4s cubic-bezier(.2,.8,.3,1)}.ch b{display:block;font:800 22px "Baloo 2",sans-serif}.ch span{font-size:14px;color:var(--mute);font-weight:600}
+.ch:hover,.ch.on{box-shadow:0 12px 24px rgba(29,39,87,.15);border-color:var(--teal);transform:translateY(-5px)}.ch:hover svg,.ch.on svg{transform:scale(1.08) rotate(-3deg)}.ch.on{background:var(--sun);color:var(--sun-ink)}.ch.on span{color:inherit}
+.bub{position:relative;margin-top:18px;background:var(--ink);color:var(--paper);border-radius:18px;padding:16px 20px;font-weight:600}.bub b{color:var(--sun)}.bub.p{animation:pop .4s}
+.facg{display:grid;gap:14px;padding:0;margin:0;list-style:none}@media(min-width:560px){.facg{grid-template-columns:repeat(2,1fr)}}@media(min-width:900px){.facg{grid-template-columns:repeat(3,1fr)}}
+.fc2{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;transition:transform .35s,box-shadow .35s}.fc2:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(29,39,87,.14)}
+.fc2 i{font-style:normal;display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--sun);font-size:28px;margin-bottom:10px;transition:transform .4s}.fc2:hover i{transform:rotate(-10deg) scale(1.12)}
+.fc2 h3{font-size:21px;margin-bottom:4px}.fc2 p{margin:0;color:var(--mute)}
+.sg{display:grid;gap:16px}@media(min-width:760px){.sg{grid-template-columns:repeat(3,1fr)}}
+.sc{margin:0;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .35s,box-shadow .35s}.sc:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(29,39,87,.14)}
+.sv{display:block;width:100%;height:auto}.sc figcaption{padding:14px 16px;color:var(--mute)}.sc b{display:block;color:var(--ink);font:800 21px "Baloo 2",sans-serif}
+.faq{max-width:680px;display:grid;gap:10px}.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}.faq summary{font-weight:700;cursor:pointer}.faq p{margin:8px 0 0;color:var(--mute)}
+.hmas{position:absolute;right:-6px;bottom:-30px;width:92px;animation:wob 3s 2s infinite}.ticket{position:relative}
+.ord{display:grid;gap:14px;padding:0;margin:0;list-style:none}@media(min-width:700px){.ord{grid-template-columns:repeat(2,1fr)}}
+.oc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;transition:transform .35s,box-shadow .35s}.oc:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(29,39,87,.14)}
+.oc i{font-style:normal;grid-row:span 3;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--sun);font-size:28px}
+.oc h3{font-size:20px}.oc p{margin:0;color:var(--mute);font-size:15px}.oc q{display:block;margin-top:4px;font-style:italic;font-size:15px}
+.tag{display:inline-block;font-weight:700;font-size:13px;padding:2px 10px;border-radius:99px;margin-left:6px;vertical-align:middle;font-family:"Nunito Sans",sans-serif}
+.t-d{background:var(--teal);color:#fff}.t-w{background:var(--sun);color:var(--sun-ink)}.t-p{background:var(--ink);color:var(--paper)}
+.tips{display:grid;gap:14px;padding:0;margin:0;list-style:none;counter-reset:tp}@media(min-width:700px){.tips{grid-template-columns:repeat(2,1fr)}}@media(min-width:960px){.tips{grid-template-columns:repeat(3,1fr)}}
+.tp{counter-increment:tp;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--teal);border-radius:16px;padding:16px 18px;transition:transform .35s,box-shadow .35s}.tp:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(29,39,87,.14)}
+.tp h3{font-size:20px;margin-bottom:4px}.tp h3::before{content:attr(data-e);margin-right:8px}.tp p{margin:0;color:var(--mute)}
+.warn{margin-top:18px;background:var(--ink);color:var(--paper);border-radius:18px;padding:18px 20px}.warn b{color:var(--sun)}.warn ul{margin:8px 0 0;padding-left:20px}
+body{padding-bottom:72px;-webkit-tap-highlight-color:transparent}
+.hid{display:none!important}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+body::before{content:'';position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:31}
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:55;display:grid;grid-template-columns:repeat(5,1fr);background:var(--card);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -6px 20px rgba(29,39,87,.1)}
+.tabs a{position:relative;display:grid;justify-items:center;text-decoration:none;font:800 12px/1.2 'Baloo 2',sans-serif;color:var(--mute);padding:4px 0;border-radius:14px;transition:color .25s}
+.tabs i{font-style:normal;font-size:22px;padding:2px 16px;border-radius:99px;transition:background .3s,transform .3s}
+.tabs a.on{color:var(--ink)}.tabs a.on i{background:var(--sun);transform:translateY(-2px)}
+.bd{position:absolute;top:0;right:calc(50% - 26px);min-width:18px;height:18px;border-radius:9px;background:#e05a5a;color:#fff;font:800 11px/18px sans-serif;text-align:center;padding:0 4px}.bd[hidden]{display:none}
+.fab{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.qa{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:4px 0 8px;animation:up .7s .1s both}
+.qa a{display:grid;justify-items:center;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 4px;font:800 14px 'Baloo 2',sans-serif;transition:transform .3s,background .3s}
+.qa i{font-style:normal;font-size:26px}.qa a:hover,.qa a:active{transform:translateY(-3px);background:var(--sun);color:var(--sun-ink)}
+.oc i{grid-row:span 4}.acts{grid-column:2}
+.mini{font:800 15px 'Baloo 2',sans-serif;padding:6px 14px;border-radius:99px;box-shadow:0 3px 0 var(--ink);margin:6px 8px 0 0}.mini:hover{box-shadow:0 5px 0 var(--ink)}
+.mini.ghost{background:transparent;color:var(--ink);border:2px solid var(--line);box-shadow:none}.mini.ghost:hover{box-shadow:none}
+.splash{position:fixed;inset:0;z-index:99;background:var(--sun);color:var(--sun-ink);display:grid;place-content:center;text-align:center;font:800 40px 'Baloo 2',sans-serif;animation:sp .5s 1.3s forwards}
+.splash small{display:block;font:700 16px 'Nunito Sans',sans-serif}.splash b{display:block;font-size:64px;animation:bob2 .6s ease-in-out infinite}
+@keyframes sp{to{opacity:0;visibility:hidden}}@keyframes bob2{50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){.splash{display:none}}
+</style>
+<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#home"><span>Apna</span>Courier</a>
+  <a class="tel-sm" href="tel:+919546200814">Call now</a>
+</header>
+
+<main id="top">
+<nav class="qa" aria-label="Quick actions"><a href="#book"><i>📦</i>Book</a><a href="#track"><i>📍</i>Track</a><a href="tel:+919546200814"><i>📞</i>Call</a><a href="https://wa.me/919546200814" target="_blank" rel="noopener"><i>💬</i>Chat</a></nav>
+<div class="hero">
+  <div>
+    <span class="city"><i></i>Now serving Ramgarh Cantonment</span>
+    <h1>Send it from your <em>doorstep</em>. Just call.</h1>
+    <p><strong>Your neighbourhood, delivered with care.</strong> Ladoos for Nani, a gift for a friend, a book for your cousin. Phone us, and we collect it from your home and deliver it across the neighbourhood.</p>
+    <a class="call" href="tel:+919546200814"><small>Call to book a pickup</small><b>+91 95462 00814</b></a>
+  </div>
+  <div class="ticket" aria-label="Example booking">
+    <h3>Pickup booked</h3>
+    <dl>
+      <dt>Parcel</dt><dd>Homemade ladoos</dd>
+      <dt>From</dt><dd>Your doorstep</dd>
+      <dt>To</dt><dd>Nani’s house</dd>
+      <dt>Pickup</dt><dd>Today, 5 pm</dd>
+    </dl>
+    <div class="ok">Booked over one phone call</div><svg viewBox="0 0 120 140" aria-hidden="true" class="hmas"><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#0d7f72"/><circle cx="60" cy="48" r="22" fill="#e0a878"/><path d="M36 46a24 24 0 0 1 48 0z" fill="#f6b21b"/><rect x="34" y="44" width="52" height="5" rx="2" fill="#1d2757"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><rect x="40" y="98" width="40" height="28" rx="4" fill="#e8833a"/><path d="M40 112h40M60 98v28" stroke="#fff" stroke-width="2" opacity=".7"/></svg>
+  </div>
+</div>
+
+<svg class="scene" viewBox="0 0 900 200" role="img" aria-label="An Apna Courier rider on a scooter carrying a parcel through town">
+<circle class="a sun" cx="790" cy="56" r="26"/>
+<g class="cl d"><ellipse cx="0" cy="40" rx="40" ry="12"/><ellipse cx="26" cy="32" rx="26" ry="14"/></g>
+<g class="cl d" style="animation-delay:-22s"><ellipse cx="0" cy="78" rx="34" ry="10"/><ellipse cx="22" cy="70" rx="22" ry="12"/></g>
+<g class="c" opacity=".22"><rect x="30" y="100" width="70" height="70"/><rect x="112" y="70" width="56" height="100"/><rect x="190" y="112" width="80" height="58"/><rect x="300" y="84" width="64" height="86"/><rect x="396" y="108" width="90" height="62"/><rect x="520" y="62" width="60" height="108"/><rect x="610" y="96" width="76" height="74"/><rect x="716" y="76" width="64" height="94"/></g>
+<path class="a" d="M820 168v-44l36-28 36 28v44z"/><rect class="b" x="850" y="140" width="14" height="28" rx="2"/>
+<rect class="b" y="168" width="900" height="32"/><line class="road" x1="0" y1="186" x2="900" y2="186"/>
+<g class="rider"><g class="jig">
+<rect x="6" y="110" width="30" height="26" rx="4" fill="#e8833a"/><path d="M6 123h30M21 110v26" stroke="#fff" stroke-width="2" opacity=".7"/>
+<rect class="a" x="30" y="138" width="58" height="12" rx="6"/>
+<path class="s" d="M86 146L78 108H66"/>
+<rect class="c" x="34" y="96" width="22" height="44" rx="9"/>
+<circle cx="46" cy="84" r="10" fill="#f0c9a0"/><path class="a" d="M36 84a10 10 0 0 1 20 0z"/>
+<path class="s" style="stroke:var(--teal);stroke-width:6" d="M52 106L74 110"/>
+<g class="wh"><circle class="b" cx="22" cy="156" r="12"/><path d="M13 156h18" stroke="#fff" stroke-width="2"/></g>
+<g class="wh"><circle class="b" cx="90" cy="156" r="12"/><path d="M81 156h18" stroke="#fff" stroke-width="2"/></g>
+</g></g>
+</svg>
+
+<div class="stats">
+  <div class="stat"><b data-n="30" data-p="₹">₹30</b><span>starting price</span></div>
+  <div class="stat"><b data-n="3">3</b><span>simple steps</span></div>
+  <div class="stat"><b>0</b><span>apps to download</span></div>
+</div>
+
+<div class="mqw"><div class="mq" aria-hidden="true"><div>Ladoos for Nani<em>✦</em>Gifts for friends<em>✦</em>Books for cousins<em>✦</em>Pickup from your doorstep<em>✦</em>One phone call<em>✦</em>Ladoos for Nani<em>✦</em>Gifts for friends<em>✦</em>Books for cousins<em>✦</em>Pickup from your doorstep<em>✦</em>One phone call<em>✦</em></div></div></div>
+
+<section id="send">
+  <h2>What you can send</h2>
+  <p class="lead">Small, permitted personal items within our local service area.</p>
+  <div class="tiles">
+    <figure class="tile"><svg viewBox="0 0 120 100" aria-hidden="true"><ellipse cx="60" cy="80" rx="48" ry="10" fill="#d9dcec"/><circle cx="38" cy="64" r="17" fill="#e8a33a"/><circle cx="82" cy="64" r="17" fill="#e8a33a"/><circle cx="60" cy="42" r="19" fill="#f0b64d"/><g fill="#b9731a"><circle cx="32" cy="60" r="2"/><circle cx="44" cy="69" r="2"/><circle cx="78" cy="59" r="2"/><circle cx="88" cy="69" r="2"/><circle cx="54" cy="38" r="2"/><circle cx="66" cy="46" r="2"/></g></svg>Ladoos and sweets</figure>
+    <figure class="tile"><svg viewBox="0 0 120 100" aria-hidden="true"><rect x="22" y="46" width="76" height="46" rx="6" fill="#e05a5a"/><rect x="16" y="34" width="88" height="18" rx="6" fill="#f07a7a"/><rect x="54" y="34" width="12" height="58" fill="#f6b21b"/><path d="M60 34C40 8 24 24 44 34ZM60 34C80 8 96 24 76 34Z" fill="#f6b21b"/></svg>Gifts</figure>
+    <figure class="tile"><svg viewBox="0 0 120 100" aria-hidden="true"><rect x="20" y="64" width="80" height="18" rx="3" fill="#0d7f72"/><rect x="28" y="44" width="68" height="18" rx="3" fill="#f6b21b"/><rect x="16" y="24" width="74" height="18" rx="3" fill="#5b7cfa"/><path d="M26 73h60M36 53h50M24 33h56" stroke="#fff" stroke-width="2" opacity=".6"/></svg>Books and papers</figure>
+    <figure class="tile"><svg viewBox="0 0 120 100" aria-hidden="true"><path d="M32 18L48 10Q60 24 72 10L88 18L104 38L90 46L88 90H32L30 46L16 38Z" fill="#5b7cfa"/><path d="M48 10Q60 24 72 10" fill="none" stroke="#fff" stroke-width="3" opacity=".6"/></svg>Clothes</figure>
+  </div>
+  <ul class="items">
+    <li>Clothes and gifts</li>
+    <li>Homemade ladoos and securely packed food</li>
+    <li>Birthday and festival presents</li>
+    <li>Books and documents</li>
+    <li>Small parcels</li>
+    <li>Personal belongings for family and friends</li>
+  </ul>
+</section>
+
+<section id="crew"><h2>Meet the Apna crew</h2><p class="lead">Real people behind every pickup. Tap a character to hear what they say.</p><div class="crewg"><button type="button" class="ch" data-q="“Rain or sun, your parcel reaches Nani’s house before her chai gets cold!”" data-n="Raju"><svg viewBox="0 0 120 140" aria-hidden="true" class=""><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#0d7f72"/><circle cx="60" cy="48" r="22" fill="#e0a878"/><path d="M36 46a24 24 0 0 1 48 0z" fill="#f6b21b"/><rect x="34" y="44" width="52" height="5" rx="2" fill="#1d2757"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><rect x="40" y="98" width="40" height="28" rx="4" fill="#e8833a"/><path d="M40 112h40M60 98v28" stroke="#fff" stroke-width="2" opacity=".7"/></svg><b>Raju</b><span>Rider</span></button><button type="button" class="ch" data-q="“One phone call and my ladoos reached my grandson. No app, no tension, beta!”" data-n="Nani"><svg viewBox="0 0 120 140" aria-hidden="true" class=""><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><circle cx="60" cy="22" r="11" fill="#cfd3e6"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#a8325e"/><path d="M32 90q28 18 56-6v14q-28 24-56 4z" fill="#f6b21b" opacity=".8"/><circle cx="60" cy="48" r="22" fill="#e6b48a"/><path d="M38 44a22 22 0 0 1 44 0q-22-10-44 0z" fill="#cfd3e6"/><circle cx="60" cy="38" r="2.5" fill="#d63a3a"/><circle cx="52" cy="48" r="7" fill="none" stroke="#1d2757" stroke-width="1.8"/><circle cx="68" cy="48" r="7" fill="none" stroke="#1d2757" stroke-width="1.8"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><ellipse cx="60" cy="116" rx="26" ry="7" fill="#fff"/><circle cx="48" cy="108" r="8" fill="#f0b64d"/><circle cx="62" cy="106" r="8" fill="#e8a33a"/><circle cx="74" cy="109" r="8" fill="#f0b64d"/></svg><b>Nani</b><span>Our favourite customer</span></button><button type="button" class="ch" data-q="“Call us, I note everything down: what, where and when. Simple.”" data-n="Meera"><svg viewBox="0 0 120 140" aria-hidden="true" class=""><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><path d="M36 50a24 26 0 0 1 48 0v38H36z" fill="#2a2230"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#5b7cfa"/><circle cx="60" cy="48" r="22" fill="#f0c9a0"/><path d="M37 46a23 23 0 0 1 46 0q-23-12-46 0z" fill="#2a2230"/><path d="M36 50a24 24 0 0 1 48 0" fill="none" stroke="#f6b21b" stroke-width="4"/><rect x="31" y="46" width="7" height="14" rx="3" fill="#f6b21b"/><path d="M34 60q4 12 20 12" fill="none" stroke="#f6b21b" stroke-width="2.5"/><circle cx="55" cy="72" r="3.5" fill="#1d2757"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><rect x="42" y="100" width="36" height="24" rx="5" fill="#1d2757"/><rect x="47" y="105" width="26" height="14" rx="2" fill="#4fd1c0"/><text x="60" y="116" text-anchor="middle" font-size="9" fill="#1d2757" font-family="sans-serif" font-weight="700">Hello!</text></svg><b>Meera</b><span>Phone desk</span></button><button type="button" class="ch" data-q="“I wrap every parcel with extra love and an extra layer of tape.”" data-n="Chotu"><svg viewBox="0 0 120 140" aria-hidden="true" class=""><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#f6b21b"/><rect x="44" y="84" width="32" height="44" rx="8" fill="#e8833a" opacity=".9"/><circle cx="60" cy="48" r="22" fill="#d99a6c"/><path d="M36 44a24 22 0 0 1 48 0z" fill="#e05a5a"/><path d="M34 44h56a6 4 0 0 1-6 4H40z" fill="#b83e3e"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><rect x="40" y="96" width="40" height="30" rx="4" fill="#c98a4b"/><rect x="54" y="96" width="12" height="30" fill="#f7e3b0"/><path d="M40 106h40" stroke="#a66f35" stroke-width="2"/></svg><b>Chotu</b><span>Packing helper</span></button></div><div class="bub" id="bub" role="status" aria-live="polite"><b>Raju:</b> “Tap any of us and we’ll say hello!”</div></section>
+<section id="fac"><h2>Our facilities</h2><p class="lead">Everything a small local courier should do well, all from one phone number.</p><ul class="facg"><li class="fc2"><i aria-hidden="true">📞</i><h3>Phone booking</h3><p>Talk to a real person. No app, no form, no passwords.</p></li><li class="fc2"><i aria-hidden="true">🏠</i><h3>Doorstep pickup</h3><p>We collect from your door, so you never queue at a counter.</p></li><li class="fc2"><i aria-hidden="true">📦</i><h3>Safe packing help</h3><p>Boxes, tape and labels for parcels that need a little extra care.</p></li><li class="fc2"><i aria-hidden="true">⚡</i><h3>Priority delivery</h3><p>Running late? Mark it urgent and we jump the queue.</p></li><li class="fc2"><i aria-hidden="true">🗓️</i><h3>Scheduled pickups</h3><p>Same time every week for shops and busy families.</p></li><li class="fc2"><i aria-hidden="true">💬</i><h3>WhatsApp updates</h3><p>Booking, pickup and delivery messages on the app you already use.</p></li><li class="fc2"><i aria-hidden="true">🧓</i><h3>Senior help desk</h3><p>Patient, slow and friendly. We even place simple online orders for you.</p></li><li class="fc2"><i aria-hidden="true">🔢</i><h3>Order number</h3><p>Every parcel gets an ID and a delivery confirmation.</p></li><li class="fc2"><i aria-hidden="true">🍬</i><h3>Careful with food</h3><p>Ladoos and sweets travel flat, sealed and quickly.</p></li><li class="fc2"><i aria-hidden="true">🏪</i><h3>Shop partner rates</h3><p>Better prices for bakeries, boutiques and home businesses.</p></li></ul></section>
+<section id="how">
+  <h2>How it works</h2>
+  <p class="lead">No app to download. No form to fill.</p>
+  <ol class="steps">
+    <li><h3>Call us</h3><p>Tell our team what you’re sending, where it’s going and when suits you.</p></li>
+    <li><h3>We come to you</h3><p>An Apna Courier rider collects the parcel from your door.</p></li>
+    <li><h3>We deliver it</h3><p>Your parcel goes straight to the address. You get an order number and a delivery confirmation.</p></li>
+  </ol>
+</section>
+
+<section id="myo"><h2>My orders</h2><p class="lead">Parcels you book here are saved on this phone.</p><ul class="ord" id="ol"></ul><p class="note" id="ole"></p></section>
+<section id="track">
+  <h2>Follow your parcel</h2>
+  <p class="lead">A demo of the updates you get after booking. Tap play to watch.</p>
+  <div class="trk">
+    <div class="tbar"><i id="ti"></i><b id="tb"></b></div>
+    <ol id="tl"><li>Booked</li><li>Picked up</li><li>On the way</li><li>Delivered</li></ol>
+    <p id="tst" class="note" role="status" aria-live="polite"></p>
+    <button type="button" id="tp">Play demo</button>
+  </div>
+</section>
+
+<section id="day"><h2>A day with Apna</h2><p class="lead">From one phone call to a happy doorstep.</p><div class="sg"><figure class="sc"><svg viewBox="0 0 300 170" role="img" aria-label="Story scene" class="sv"><rect width="300" height="170" fill="#fbe9c0"/><rect y="150" width="300" height="20" fill="#1d2757" opacity=".85"/><path d="M10 150V90l40-30 40 30v60z" fill="#f0b64d"/><rect x="40" y="112" width="20" height="38" rx="3" fill="#1d2757"/><rect x="20" y="96" width="14" height="14" fill="#fff" opacity=".8"/><g transform="translate(70 56) scale(0.7)"><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><circle cx="60" cy="22" r="11" fill="#cfd3e6"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#a8325e"/><path d="M32 90q28 18 56-6v14q-28 24-56 4z" fill="#f6b21b" opacity=".8"/><circle cx="60" cy="48" r="22" fill="#e6b48a"/><path d="M38 44a22 22 0 0 1 44 0q-22-10-44 0z" fill="#cfd3e6"/><circle cx="60" cy="38" r="2.5" fill="#d63a3a"/><circle cx="52" cy="48" r="7" fill="none" stroke="#1d2757" stroke-width="1.8"/><circle cx="68" cy="48" r="7" fill="none" stroke="#1d2757" stroke-width="1.8"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><ellipse cx="60" cy="116" rx="26" ry="7" fill="#fff"/><circle cx="48" cy="108" r="8" fill="#f0b64d"/><circle cx="62" cy="106" r="8" fill="#e8a33a"/><circle cx="74" cy="109" r="8" fill="#f0b64d"/></g><g transform="translate(160 56) scale(0.7)"><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#0d7f72"/><circle cx="60" cy="48" r="22" fill="#e0a878"/><path d="M36 46a24 24 0 0 1 48 0z" fill="#f6b21b"/><rect x="34" y="44" width="52" height="5" rx="2" fill="#1d2757"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><rect x="40" y="98" width="40" height="28" rx="4" fill="#e8833a"/><path d="M40 112h40M60 98v28" stroke="#fff" stroke-width="2" opacity=".7"/></g><text x="150" y="36" text-anchor="middle" font-size="14" font-weight="800" font-family="Baloo 2,sans-serif" fill="#1d2757">📞 “Please pick up!”</text></svg><figcaption><b>1. The call</b>Nani rings us and Raju arrives at her door.</figcaption></figure><figure class="sc"><svg viewBox="0 0 300 170" role="img" aria-label="Story scene" class="sv"><rect width="300" height="170" fill="#d6f0ec"/><g fill="#0d7f72" opacity=".25"><rect x="20" y="80" width="40" height="70"/><rect x="70" y="60" width="34" height="90"/><rect x="200" y="70" width="44" height="80"/><rect x="250" y="90" width="36" height="60"/></g><rect y="140" width="300" height="30" fill="#1d2757" opacity=".85"/><path d="M0 156h300" stroke="#f7f8fc" stroke-width="3" stroke-dasharray="18 14"/><path d="M20 40Q150 0 280 40" fill="none" stroke="#0d7f72" stroke-width="3" stroke-dasharray="6 6"/><g transform="translate(100 40) scale(0.8)"><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#0d7f72"/><circle cx="60" cy="48" r="22" fill="#e0a878"/><path d="M36 46a24 24 0 0 1 48 0z" fill="#f6b21b"/><rect x="34" y="44" width="52" height="5" rx="2" fill="#1d2757"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><rect x="40" y="98" width="40" height="28" rx="4" fill="#e8833a"/><path d="M40 112h40M60 98v28" stroke="#fff" stroke-width="2" opacity=".7"/></g><text x="150" y="20" text-anchor="middle" font-size="14" font-weight="800" font-family="Baloo 2,sans-serif" fill="#1d2757">On the way!</text></svg><figcaption><b>2. The ride</b>Raju takes the quickest local route.</figcaption></figure><figure class="sc"><svg viewBox="0 0 300 170" role="img" aria-label="Story scene" class="sv"><rect width="300" height="170" fill="#e6ebff"/><rect y="150" width="300" height="20" fill="#1d2757" opacity=".85"/><path d="M200 150V90l40-30 40 30v60z" fill="#9fb2fa"/><rect x="230" y="112" width="20" height="38" rx="3" fill="#1d2757"/><rect x="210" y="96" width="14" height="14" fill="#fff" opacity=".8"/><g transform="translate(70 56) scale(0.7)"><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#f6b21b"/><rect x="44" y="84" width="32" height="44" rx="8" fill="#e8833a" opacity=".9"/><circle cx="60" cy="48" r="22" fill="#d99a6c"/><path d="M36 44a24 22 0 0 1 48 0z" fill="#e05a5a"/><path d="M34 44h56a6 4 0 0 1-6 4H40z" fill="#b83e3e"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><rect x="40" y="96" width="40" height="30" rx="4" fill="#c98a4b"/><rect x="54" y="96" width="12" height="30" fill="#f7e3b0"/><path d="M40 106h40" stroke="#a66f35" stroke-width="2"/></g><g transform="translate(130 56) scale(0.7)"><ellipse cx="60" cy="132" rx="34" ry="6" fill="#000" opacity=".12"/><rect x="32" y="72" width="56" height="58" rx="22" fill="#0d7f72"/><circle cx="60" cy="48" r="22" fill="#e0a878"/><path d="M36 46a24 24 0 0 1 48 0z" fill="#f6b21b"/><rect x="34" y="44" width="52" height="5" rx="2" fill="#1d2757"/><circle cx="52" cy="48" r="2.6" fill="#1d2757"/><circle cx="68" cy="48" r="2.6" fill="#1d2757"/><path d="M52 57q8 8 16 0" fill="none" stroke="#1d2757" stroke-width="2.5" stroke-linecap="round"/><circle cx="47" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><circle cx="73" cy="55" r="3.5" fill="#e8836a" opacity=".45"/><rect x="40" y="98" width="40" height="28" rx="4" fill="#e8833a"/><path d="M40 112h40M60 98v28" stroke="#fff" stroke-width="2" opacity=".7"/></g><text x="150" y="36" text-anchor="middle" font-size="14" font-weight="800" font-family="Baloo 2,sans-serif" fill="#1d2757">Delivered ❤️</text></svg><figcaption><b>3. The smile</b>The parcel lands safely, with confirmation.</figcaption></figure></div></section>
+<section id="price">
+  <h2>Simple, clear prices</h2>
+  <p class="lead">We tell you the total charge before you confirm. These are sample pilot rates that we will revise after working out real travel and running costs.</p>
+  <div class="prices">
+    <div class="price"><b>₹30</b><h3>Short distance</h3><p>Nearby streets and neighbours.</p></div>
+    <div class="price"><b>₹50</b><h3>Medium distance</h3><p>Across the neighbourhood.</p></div>
+    <div class="price"><b>₹70</b><h3>Longer local distance</h3><p>The far end of our service area.</p></div>
+  </div>
+  <p class="note">Need it urgently? Priority delivery costs a little extra. First-time customers get an introductory rate.</p>
+</section>
+
+<section id="order">
+  <h2>Try booking a pickup</h2>
+  <p class="lead">This shows what our team notes down while you are on the phone.</p>
+  <form id="f">
+    <label>Your name<input name="name" required></label>
+    <label>Pickup address<input name="from" required></label>
+    <label>Recipient name and address<input name="to" required></label>
+    <label>Parcel type<select name="type"><option>Clothes or gift</option><option>Homemade food</option><option>Books or documents</option><option>Other small parcel</option></select></label>
+    <label>Distance<select name="dist"><option value="30">Short distance</option><option value="50">Medium distance</option><option value="70">Longer local distance</option></select></label>
+    <label class="chk"><input type="checkbox" name="urgent"> Urgent delivery (+₹20)</label>
+    <button type="submit">Book pickup</button>
+  </form>
+  <div id="out" role="status" aria-live="polite"></div>
+</section>
+
+<section id="safe">
+  <h2>Handled with care and trust</h2>
+  <ul class="safe">
+    <li>Every parcel gets an order number and a delivery confirmation.</li>
+    <li>Homemade food must be securely packed, and perishable items need extra care.</li>
+    <li>We set parcel size limits and do not carry prohibited or hazardous items.</li>
+    <li>Your address and phone number stay private.</li>
+    <li>Only authorised, supervised team members handle deliveries.</li>
+  </ul>
+</section>
+
+<section id="orders">
+  <h2>Recent customer orders</h2>
+  <p class="lead">Sample orders that show the kind of parcels our neighbours send. Names and details are made up for the demo.</p>
+  <ul class="ord">
+    <li class="oc"><i aria-hidden="true">🍬</i><h3>AC1042 <span class="tag t-d">Delivered</span></h3><p>Homemade ladoos · Short distance · ₹30</p><q>“Reached my grandson before the tea got cold.” — Sunita ji</q></li>
+    <li class="oc"><i aria-hidden="true">🎁</i><h3>AC1043 <span class="tag t-w">On the way</span></h3><p>Birthday gift · Medium distance · ₹50</p><q>“Booked in one call, with a gift wrap tip.” — Rohan</q></li>
+    <li class="oc"><i aria-hidden="true">📚</i><h3>AC1044 <span class="tag t-d">Delivered</span></h3><p>Exam books · Longer local · ₹70</p><q>“My cousin got them the same evening.” — Priya</q></li>
+    <li class="oc"><i aria-hidden="true">👕</i><h3>AC1045 <span class="tag t-p">Picked up</span></h3><p>Festival clothes · Short distance · ₹30</p><q>“No need to leave the house at all.” — Mr. Verma</q></li>
+    <li class="oc"><i aria-hidden="true">🎂</i><h3>AC1046 <span class="tag t-w">Urgent</span></h3><p>Bakery cake · Medium + urgent · ₹70</p><q>“Priority delivery saved the party.” — Sweet Bites</q></li>
+    <li class="oc"><i aria-hidden="true">📄</i><h3>AC1047 <span class="tag t-d">Delivered</span></h3><p>Documents · Short distance · ₹30</p><q>“Papers reached the office on time.” — Anita</q></li>
+  </ul>
+</section>
+
+<section id="tips">
+  <h2>Safety tips</h2>
+  <p class="lead">A few simple habits keep every parcel safe, for you, our riders and the person receiving it.</p>
+  <ul class="tips">
+    <li class="tp"><h3 data-e="📦">Pack it tight</h3><p>Use a sturdy box or bag, tape every opening and keep fragile things padded.</p></li>
+    <li class="tp"><h3 data-e="🏷️">Label clearly</h3><p>Write the recipient’s name, address and phone number on the parcel.</p></li>
+    <li class="tp"><h3 data-e="🍬">Seal food well</h3><p>Use airtight containers. Tell us if it is perishable so we can deliver it quickly.</p></li>
+    <li class="tp"><h3 data-e="🔢">Check the order number</h3><p>Ask the rider for your order number at pickup. Ours is always shared by phone or WhatsApp.</p></li>
+    <li class="tp"><h3 data-e="💰">Confirm the price first</h3><p>We tell you the total before you confirm. Ask if anything is unclear.</p></li>
+    <li class="tp"><h3 data-e="👤">Hand over to the right person</h3><p>Make sure the recipient knows a parcel is coming and is home to collect it.</p></li>
+    <li class="tp"><h3 data-e="🔒">Share only what is needed</h3><p>We need an address and a phone number. Never share bank PINs or OTPs with anyone, including us.</p></li>
+    <li class="tp"><h3 data-e="👀">Meet the rider at the door</h3><p>Seniors and children: let a family member or neighbour be with you at pickup.</p></li>
+    <li class="tp"><h3 data-e="📞">Call if anything feels off</h3><p>Delay, damage or a wrong contact? Ring us at once and we will sort it out.</p></li>
+  </ul>
+  <div class="warn"><b>Please do not send:</b><ul><li>Cash, jewellery or other high-value items unless we agree it on the call</li><li>Medicines without a proper pack and label</li><li>Anything illegal, flammable, sharp or hazardous</li></ul></div>
+</section>
+
+<section id="why">
+  <h2>Why people call Apna</h2>
+  <div class="why">
+    <div><h3>Book by phone</h3><p>Talk to a real person instead of tapping through an app.</p></div>
+    <div><h3>Doorstep pickup</h3><p>You never need to leave home to send a parcel.</p></div>
+    <div><h3>Local and flexible</h3><p>Short-distance deliveries within the city, on a time that works for you.</p></div>
+    <div><h3>Personal service</h3><p>Explain what you need directly to our representative.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="senior">
+    <h2>Extra help for senior citizens</h2>
+    <p>If you’d rather not deal with apps, we’ll help you arrange your delivery and, where needed, place a simple online order for you.</p>
+  </div>
+</section>
+
+<section id="who">
+  <h2>Made for you if you are</h2>
+  <ul class="who">
+    <li>A senior citizen or have limited mobility</li>
+    <li>Without your own transport</li>
+    <li>A busy professional or working family</li>
+    <li>A student sending books, gifts or belongings</li>
+    <li>Sending homemade food or gifts to relatives</li>
+    <li>A small local shop or home business that needs local deliveries</li>
+  </ul>
+</section>
+<section id="area">
+  <h2>Our pilot service area: Ramgarh Cantonment</h2>
+  <div class="split">
+    <div>
+      <p class="lead">We start small in Ramgarh Cantonment, Jharkhand: one neighbourhood, done well. Prices rise as the distance from our pickup base grows. Once the pilot works, we expand to nearby areas.</p>
+      <div class="mapbtns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ramgarh+Cantonment+Jharkhand" target="_blank" rel="noopener">Open in Google Maps</a><button type="button" id="loc">Use my location</button></div>
+      <p id="locout" class="note" role="status" aria-live="polite">Tap “Use my location” to see which price ring you are in.</p>
+      <p id="rdout" class="note"><b>Rider (demo):</b> finding the nearest rider…</p>
+      <p class="note">Rings are sample distances of 1, 2 and 3 km around our pickup base. Replace them with your real pickup base. The rider marker is a demo of how tracking will look; real live tracking needs the rider’s phone GPS.</p>
+    </div>
+    <svg class="map" viewBox="0 0 300 300" role="img" aria-label="Three rings around a pickup base showing rates of 30, 50 and 70 rupees">
+      <rect x="30" y="200" width="70" height="60" rx="14" style="fill:var(--teal);opacity:.15"/>
+      <g class="st"><path d="M0 110H300"/><path d="M0 200H300"/><path d="M95 0V300"/><path d="M205 0V300"/><path d="M20 280L280 30"/></g>
+      <circle cx="150" cy="150" r="135"/><circle cx="150" cy="150" r="90"/><circle cx="150" cy="150" r="45"/>
+      <circle cx="150" cy="150" r="6" style="fill:var(--sun);stroke:var(--ink);stroke-dasharray:none"/>
+      <text x="150" y="135" text-anchor="middle">₹30</text>
+      <text x="150" y="85" text-anchor="middle">₹50</text>
+      <text x="150" y="36" text-anchor="middle">₹70</text>
+      <text x="150" y="176" text-anchor="middle">Pickup base</text>
+      <g id="me" style="opacity:0;transition:opacity .5s"><path d="M0 0C-14-16-12-30 0-30S14-16 0 0Z" style="fill:var(--teal);stroke:var(--paper);stroke-width:2"/></g>
+      <path id="route" d="M95 110H205V200H95Z" style="fill:none;stroke:none"/>
+      <g id="rd" transform="translate(95 110)"><rect x="-8" y="-8" width="16" height="16" rx="8" style="fill:var(--sun);stroke:var(--ink);stroke-width:2.5"/><text y="-14" text-anchor="middle" style="font-size:11px">Rider</text></g>
+    </svg>
+  </div>
+</section>
+
+<section id="grow">
+  <h2>How we reach our neighbours</h2>
+  <p class="lead">Simple language, trusted faces and clear prices.</p>
+  <ul class="grow">
+    <li><h3>Local awareness</h3><p>Flyers in apartment buildings, residential lanes and local markets (with permission), each showing our contact number.</p></li>
+    <li><h3>Senior citizen outreach</h3><p>Visits to residential communities and senior groups, with a printed card that explains how to request a pickup by phone.</p></li>
+    <li><h3>WhatsApp and social media</h3><p>A WhatsApp Business profile, a simple catalogue, and short videos that show a delivery being booked by phone.</p></li>
+    <li><h3>Local business partners</h3><p>Gift shops, bakeries, sweet shops, boutiques and home businesses, with regular pickups and better rates for repeat and bulk orders.</p></li>
+    <li><h3>Introductory offers</h3><p>A friendly first-time rate, loyalty benefits for repeat customers, and scheduled delivery packages if there is demand.</p></li>
+  </ul>
+</section>
+
+<section id="earn">
+  <h2>How Apna Courier earns</h2>
+  <ul class="safe">
+    <li>A basic charge for each pickup and delivery</li>
+    <li>Distance-based delivery charges</li>
+    <li>Extra charge for urgent or priority delivery</li>
+    <li>Regular delivery arrangements with local businesses</li>
+    <li>Scheduled pickups for repeat customers</li>
+  </ul>
+  <p class="note">One example delivery at the ₹50 rate. These costs are guesses for now and will be replaced with real figures.</p>
+  <table>
+    <tr><th>Item</th><th>Amount</th></tr>
+    <tr><td>Customer pays</td><td>₹50</td></tr>
+    <tr><td>Fuel or travel</td><td>₹8</td></tr>
+    <tr><td>Packaging and label</td><td>₹5</td></tr>
+    <tr><td>Rider’s time</td><td>₹22</td></tr>
+    <tr><td>Profit per delivery</td><td>₹15</td></tr>
+  </table>
+</section>
+
+<section id="faq"><h2>Quick questions</h2><div class="faq"><details><summary>Do I need a smartphone?</summary><p>No. A basic phone call is enough. WhatsApp updates are optional.</p></details><details><summary>What can’t you carry?</summary><p>Prohibited or hazardous items, and parcels above our size limit.</p></details><details><summary>Can you carry homemade food?</summary><p>Yes, if it is securely packed. Perishables need extra care, so tell us when you call.</p></details><details><summary>How do I know the price?</summary><p>We tell you the total before you confirm.</p></details><details><summary>What if I am outside the area?</summary><p>Call us anyway. We are expanding after the pilot.</p></details></div></section>
+<section id="impact">
+  <h2>What we hope to change</h2>
+  <p class="lead">Apna Courier makes local delivery easier for everyone. People no longer travel just to send a small parcel, and elderly neighbours can send something with one phone call. It is also a hands-on way for students to learn about logistics, customer service, pricing and running a business.</p>
+</section>
+</main>
+</div>
+
+<footer>
+  <h2>Ready to send something?</h2>
+  <p>Call us and tell us what and where.</p>
+  <a class="call" href="tel:+919546200814"><small>Book a pickup</small><b>+91 95462 00814</b></a>
+  <small>Pilot service in Ramgarh Cantonment first, with more areas coming soon.</small>
+  <small>Apna Courier is a startup idea by Navjot and Aryaveer.</small>
+</footer>
+<nav class="tabs" aria-label="App tabs"><a href="#home" data-t="home"><i>🏠</i>Home</a><a href="#book" data-t="book"><i>📦</i>Book</a><a href="#track" data-t="track"><i>📍</i>Track<span class="bd" id="bd" hidden>0</span></a><a href="#help" data-t="help"><i>🛡️</i>Help</a><a href="#more" data-t="more"><i>☰</i>More</a></nav>
+<div class="splash" aria-hidden="true"><b>🛵</b>Apna Courier<small>Call us, we pick up</small></div>
+<div class="fab"><a class="wa" href="https://wa.me/919546200814" target="_blank" rel="noopener">WhatsApp</a><a class="fc" href="tel:+919546200814">Call now</a></div>
+<script>
+var f=document.getElementById('f'),out=document.getElementById('out');
+f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var d=new FormData(f),u=d.get('urgent')?20:0,t=Number(d.get('dist'))+u;
+  var n='AC'+Math.floor(1000+Math.random()*9000);
+  if(window.confetti)confetti();
+  out.textContent='Pickup booked. Order number '+n+'\nParcel: '+d.get('type')+'\nFrom: '+d.get('from')+'\nTo: '+d.get('to')+'\nTotal charge: ₹'+t+(u?' (urgent)':'')+'\nWe will call you to confirm.';
+});
+
+(function(){
+  var root=document.documentElement;
+  if(!root.classList.contains('js'))return;
+  var bar=document.createElement('div');bar.id='bar';document.body.appendChild(bar);
+  var tick=false;
+  function prog(){var h=root.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?Math.min(scrollY/h,1):0)+')';tick=false}
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(prog)}},{passive:true});prog();
+  var sel='.ch,.fc2,.sc,.oc,.tp,.warn,.faq details,section h2,section .lead,.items li,.tile,.stat,.trk,.mqw,.steps li,.price,.why>div,.senior,.who li,form,.safe li,.grow li,table,.split>div,.note,footer h2,footer p,footer .call,footer small';
+  var els=document.querySelectorAll(sel);
+  els.forEach(function(el){
+    var i=0,s=el;while((s=s.previousElementSibling)){if(s.matches(sel))i++}
+    el.style.setProperty('--d',Math.min(i*.08,.5)+'s');
+    el.classList.add('rv');
+  });
+  function count(el){
+    var t=el.textContent,n=parseInt(t.replace(/\D/g,''),10);if(!n)return;
+    var st=null;
+    (function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/900,1),e=1-Math.pow(1-p,3);
+      el.textContent='\u20B9'+Math.round(n*e);if(p<1)requestAnimationFrame(step)})(performance.now());
+  }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(x){
+      if(!x.isIntersecting)return;
+      x.target.classList.add('in');
+      if(x.target.matches('.price'))count(x.target.querySelector('b'));
+      io.unobserve(x.target);
+    });
+  },{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el)});
+  var m=document.querySelector('.map');if(m)io.observe(m);
+  document.querySelectorAll('[data-n]').forEach(function(el){
+    var n=+el.dataset.n,p=el.dataset.p||'';
+    new IntersectionObserver(function(e,o){if(!e[0].isIntersecting)return;o.disconnect();var st=null;
+      (function f(t){if(!st)st=t;var k=Math.min((t-st)/1000,1);el.textContent=p+Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(performance.now())}).observe(el);
+  });
+})();
+(function(){
+  var b=document.getElementById('loc'),o=document.getElementById('locout');
+  if(!b)return;
+  b.addEventListener('click',function(){
+    if(!navigator.geolocation){o.textContent='Location is not available on this device.';return}
+    o.textContent='Finding you…';
+    navigator.geolocation.getCurrentPosition(function(p){
+      var dx=(p.coords.longitude-85.525)*111.32*Math.cos(23.62*Math.PI/180),dy=(p.coords.latitude-23.62)*110.57,
+      d=Math.sqrt(dx*dx+dy*dy),r=d<1?30:d<2?50:d<3?70:0,me=document.getElementById('me');
+      if(r){me.setAttribute('transform','translate('+(150+dx*45)+' '+(150-dy*45)+')');me.style.opacity=1;
+        o.textContent='You are about '+d.toFixed(1)+' km from our pickup base. Your delivery would start at ₹'+r+'.'}
+      else{me.style.opacity=0;o.textContent='You are about '+d.toFixed(1)+' km from our pickup base, outside our pilot area for now. Call us and we will see what we can do.'}
+    },function(){o.textContent='We couldn’t get your location. You can still tap Open in Google Maps.'},{timeout:10000});
+  });
+})();
+(function(){
+  var r=document.getElementById('route'),d=document.getElementById('rd'),o=document.getElementById('rdout');
+  if(!r||!d)return;
+  var L=r.getTotalLength(),calm=matchMedia('(prefers-reduced-motion:reduce)').matches,t0=performance.now(),last=0;
+  function put(s){var p=r.getPointAtLength(s%L);d.setAttribute('transform','translate('+p.x+' '+p.y+')');return Math.hypot(p.x-150,p.y-150)/45}
+  function say(km){o.innerHTML='<b>Rider (demo):</b> about '+km.toFixed(1)+' km from the pickup base, roughly '+Math.max(1,Math.round(km*4))+' min away.'}
+  if(calm){say(put(40));return}
+  (function f(t){var km=put((t-t0)/1000*20);if(t-last>1000){last=t;say(km)}requestAnimationFrame(f)})(t0);
+})();
+window.confetti=function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var c=['#f6b21b','#0d7f72','#e05a5a','#5b7cfa','#e8833a'];
+  for(var i=0;i<36;i++){var e=document.createElement('span');e.className='cf';
+    e.style.cssText='left:'+(10+Math.random()*80)+'vw;background:'+c[i%5]+';animation-delay:'+(Math.random()*.4)+'s;--x:'+(Math.random()*160-80)+'px;--r:'+(Math.random()*720)+'deg';
+    document.body.appendChild(e);setTimeout(e.remove.bind(e),2600)}
+};
+(function(){
+  var b=document.getElementById('tp');if(!b)return;
+  var i=document.getElementById('ti'),k=document.getElementById('tb'),lis=document.querySelectorAll('#tl li'),s=document.getElementById('tst'),
+  msg=['Booked. We will call to confirm your pickup.','Picked up from your doorstep.','Your rider is on the way.','Delivered. Confirmation sent.'],busy=false;
+  function go(n){var p=n/3*100;i.style.width=p+'%';k.style.left=p+'%';lis.forEach(function(l,x){l.classList.toggle('on',x<=n)});s.textContent=msg[n]}
+  go(0);
+  b.addEventListener('click',function(){if(busy)return;busy=true;var n=0;go(0);b.textContent='Playing…';
+    var t=setInterval(function(){n++;go(n);if(n==3){clearInterval(t);busy=false;b.textContent='Play again';confetti()}},1700)});
+})();
+(function(){
+  var fb=document.querySelector('.fab');if(!fb)return;
+  function sh(){fb.classList.toggle('show',scrollY>500)}
+  addEventListener('scroll',sh,{passive:true});sh();
+})();
+
+(function(){var bs=document.querySelectorAll('.ch'),bb=document.getElementById('bub');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');bb.innerHTML='<b>'+b.dataset.n+':</b> '+b.dataset.q;bb.classList.remove('p');void bb.offsetWidth;bb.classList.add('p');if(window.confetti&&b.dataset.n==='Nani')confetti()})})})();
+(function(){
+  var G={home:['.hero','.qa','.scene','.stats','.mqw','#send','#crew','#day'],book:['#order','#price','#area'],track:['#myo','#track','#orders'],help:['#fac','#tips','#safe','#faq','#why','#who'],more:['#grow','#earn','#impact','.senior']};
+  var ft=document.querySelector('footer'),tabs=document.querySelectorAll('.tabs a');
+  Object.keys(G).forEach(function(k){G[k]=G[k].map(function(s){var e=document.querySelector(s);return e&&s==='.senior'?e.closest('section'):e}).filter(Boolean)});
+  function route(){var n=location.hash.slice(1);if(!G[n])n='home';
+    Object.keys(G).forEach(function(k){G[k].forEach(function(e){e.classList.toggle('hid',k!==n)})});
+    ft.classList.toggle('hid',n!=='home'&&n!=='more');
+    tabs.forEach(function(a){var on=a.dataset.t===n;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    scrollTo(0,0)}
+  addEventListener('hashchange',route);route();
+  var K='apna_orders',ol=document.getElementById('ol'),ole=document.getElementById('ole'),bd=document.getElementById('bd');
+  var IC={'Homemade food':'🍬','Clothes or gift':'🎁','Books or documents':'📚'};
+  function load(){try{return JSON.parse(localStorage.getItem(K)||'[]')}catch(e){return[]}}
+  function save(a){try{localStorage.setItem(K,JSON.stringify(a))}catch(e){}}
+  function h(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  function render(){var a=load();ol.textContent='';
+    ole.textContent=a.length?'':'No orders yet. Book your first pickup and it will appear here.';
+    bd.textContent=a.length;bd.hidden=!a.length;
+    a.slice().reverse().forEach(function(o){
+      var li=h('li','oc'),i=h('i',null,IC[o.type]||'📦'),t=h('h3',null,o.n+' '),g=h('span','tag t-w','Booked'),p=h('p',null,o.type+' · ₹'+o.total),q=h('q',null,o.from+' → '+o.to),r=h('div','acts'),b1=h('button','mini','Track'),b2=h('button','mini ghost','Remove');
+      b1.type=b2.type='button';
+      b1.onclick=function(){document.getElementById('track').scrollIntoView({behavior:'smooth'});document.getElementById('tp').click()};
+      b2.onclick=function(){save(load().filter(function(x){return x.n!==o.n}));render()};
+      t.appendChild(g);r.append(b1,b2);li.append(i,t,p,q,r);ol.appendChild(li)})}
+  render();
+  f.addEventListener('submit',function(){
+    var m=/Order number (AC\d+)/.exec(out.textContent),tt=/Total charge: ₹(\d+)/.exec(out.textContent);if(!m)return;
+    var d=new FormData(f),a=load();a.push({n:m[1],type:d.get('type'),from:d.get('from'),to:d.get('to'),total:tt?tt[1]:''});save(a);render();
+    var l=h('a',null,'See it in My orders →');l.href='#track';out.append('\n',l)});
+})();
+</script>
+</body>
+</html>
